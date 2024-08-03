@@ -148,7 +148,7 @@ class Mod(Cog):
                 pass
 
         await ctx.guild.ban(
-            target, reason=f"[Ban performed by {ctx.author} ] {reason}", delete_message_days=0
+            target, reason=f"[Ban performed by {ctx.author}] {reason}", delete_message_days=0
         )
         await ctx.send(f"**{target.mention}** is now BANNED.\n{failmsg}")
 
@@ -297,7 +297,7 @@ class Mod(Cog):
             ctx, str(target)
         )
 
-        await ctx.guild.unban(target, reason=f"[Unban performed by {ctx.author} ] {reason}")
+        await ctx.guild.unban(target, reason=f"[Unban performed by {ctx.author}] {reason}")
         await ctx.send(f"{safe_name} is now UNBANNED.")
 
     @commands.bot_has_permissions(ban_members=True)
