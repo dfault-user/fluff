@@ -81,7 +81,7 @@ class Mod(Cog):
             # Prevents kick issues on bots
             pass
 
-        await target.kick(reason=f"[ Kick by {ctx.author} ] {reason}")
+        await target.kick(reason=f"[Kick peformed by {ctx.author} ] {reason}")
         await ctx.send(f"**{target.mention}** was KICKED.{failmsg}")
 
     @commands.bot_has_permissions(ban_members=True)
@@ -148,7 +148,7 @@ class Mod(Cog):
                 pass
 
         await ctx.guild.ban(
-            target, reason=f"[ Ban by {ctx.author} ] {reason}", delete_message_days=0
+            target, reason=f"[Ban performed by {ctx.author} ] {reason}", delete_message_days=0
         )
         await ctx.send(f"**{target.mention}** is now BANNED.\n{failmsg}")
 
@@ -225,7 +225,7 @@ class Mod(Cog):
                 pass
 
         await target.ban(
-            reason=f"[ Ban by {ctx.author} ] {reason}",
+            reason=f"[Ban performed by {ctx.author}] {reason}",
             delete_message_days=day_count,
         )
         await ctx.send(
@@ -273,7 +273,7 @@ class Mod(Cog):
 
             await ctx.guild.ban(
                 target_user,
-                reason=f"[ Ban by {ctx.author} ] Massban.",
+                reason=f"[Ban performed by {ctx.author}] Massban",
                 delete_message_days=0,
             )
 
@@ -297,7 +297,7 @@ class Mod(Cog):
             ctx, str(target)
         )
 
-        await ctx.guild.unban(target, reason=f"[ Unban by {ctx.author} ] {reason}")
+        await ctx.guild.unban(target, reason=f"[Unban performed by {ctx.author} ] {reason}")
         await ctx.send(f"{safe_name} is now UNBANNED.")
 
     @commands.bot_has_permissions(ban_members=True)
@@ -342,7 +342,7 @@ class Mod(Cog):
         )
 
         await ctx.guild.ban(
-            target, reason=f"[ Ban by {ctx.author} ] {reason}", delete_message_days=0
+            target, reason=f"[Ban performed by {ctx.author}] {reason}", delete_message_days=0
         )
         await ctx.send(f"{safe_name} is now silently BANNED.")
 
