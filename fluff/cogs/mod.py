@@ -542,7 +542,7 @@ class Mod(Cog):
         The time (in seconds) to set slowmode for. Optional, will be five seconds by default."""
         if not channel:
             channel = ctx.channel
-        channel.edit(slowmode_delay=seconds)
+        await channel.edit(slowmode_delay=seconds)
     
     @commands.check(isadmin)
     @commands.guild_only()

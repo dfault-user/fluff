@@ -265,7 +265,6 @@ class Reply(Cog):
                 return
         except:
             return
-        print(f"piss {refmessage} \n{refmessage.author}")
         preference = self.check_override(refmessage)
         if not preference:
             preference = fill_profile(refmessage.author.id)["replypref"]
