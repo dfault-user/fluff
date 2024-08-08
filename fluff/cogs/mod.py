@@ -533,7 +533,7 @@ class Mod(Cog):
     @commands.check(ismod)
     @commands.guild_only()
     @commands.command(aliases=["slow"])
-    async def slowmode(self, ctx, channel: discord.abc.GuildChannel, seconds: int):
+    async def slowmode(self, ctx, channel: discord.abc.GuildChannel = None, seconds: int = 5):
         channel = channel or ctx.channel
         channel.edit(slowmode_delay=seconds)
         if channel.slowmode_delay == seconds:
