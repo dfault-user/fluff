@@ -384,7 +384,11 @@ class Reply(Cog):
                 profile = fill_profile(after.id)
                 profile["replypref"] = role_preferences[role.name]
                 set_userfile(after.id, "profile", json.dumps(profile))
-                break
+                return
+            else:
+                profile = fill_profile(after.id)
+                profile["replypref"] = None
+                set_userfile(after.id, "profile", json.dumps(profile))
 
 async def setup(bot):
     await bot.add_cog(Reply(bot))
