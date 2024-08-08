@@ -543,8 +543,10 @@ class Mod(Cog):
         if not channel:
             channel = ctx.channel
         await channel.edit(slowmode_delay=seconds)
-        if channel.slowmode_delay == seconds:
+        if channel.slowmode_delay == seconds and seconds > 1:
             return ctx.reply(f"Slowmode set succesfully in {channel} to {seconds} seconds(s).")
+        elif channel.slowmode_delay == seconds and seconds == 0:
+            return ctx.reply(f"Slowmode disabled in {channel}.")
         
     @commands.check(isadmin)
     @commands.guild_only()
