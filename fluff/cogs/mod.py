@@ -530,6 +530,15 @@ class Mod(Cog):
                 await msg.clear_reactions()
         await ctx.send(f"<a:bunnytrashjump:1256812177768185878> `{deleted}` reactions purged.", delete_after=5)
 
+    @commands.check(ismod)
+    @commands.guild_only()
+    @commands.command(aliases=["slow"])
+    async def slowmode(self, ctx, channel: discord.TextChannel, seconds: int):
+        channel = channel or ctx.channel
+        channel.edit(slowmode_delay=seconds)
+        if channel.slowmode_delay == seconds:
+            return ctx.reply(f"Slowmode set to {str(seconds)} second(s).", mention_author=False)
+    
     @commands.check(isadmin)
     @commands.guild_only()
     @commands.command(aliases=["send"])
