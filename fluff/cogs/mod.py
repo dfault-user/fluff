@@ -81,7 +81,7 @@ class Mod(Cog):
             # Prevents kick issues on bots
             pass
 
-        await target.kick(reason=f"[Kick peformed by {ctx.author} ] {reason}")
+        await target.kick(reason=f"[Kick peformed by {ctx.author}] {reason}")
         await ctx.send(f"**{target.mention}** was KICKED.{failmsg}")
 
     @commands.bot_has_permissions(ban_members=True)
